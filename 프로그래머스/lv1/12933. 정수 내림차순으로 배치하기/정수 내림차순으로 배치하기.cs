@@ -1,5 +1,6 @@
 public class Solution {
-    public long solution(long n) {        
+    public long solution(long n) {    
+        
         // 배열 만들기
         string numToStr = n.ToString();
         int len = numToStr.Length;
@@ -10,7 +11,7 @@ public class Solution {
             numArr[i] = int.Parse(numToStr[i].ToString());
         }
         
-        // 배열 정렬
+        // 배열 정렬 - 삽입 정렬
         for (int i = 0; i < len; i++)
         {
             int maxIndex = i;
@@ -26,10 +27,11 @@ public class Solution {
             numArr[maxIndex] = temp;
         }
         
+        // 문자로 변환시켜서 이어 붙이기
         string answer = "";
-        for (int i = 0; i < len; i++)
+        foreach (int num in numArr)
         {
-            answer += numArr[i].ToString();
+            answer += num.ToString();
         }
         
         return long.Parse(answer);
