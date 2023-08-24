@@ -8,5 +8,4 @@ numDict = {}
 for i, v in enumerate(sorted(set(arr))):
     numDict[v] = i
     
-lit = [numDict[i] for i in arr]
-print(*lit, sep=" ")
+print(*[numDict[i] for i in arr], sep=" ")
