@@ -2,10 +2,8 @@ using System;
 public class Solution {
     public long solution(int a, int b) {
         long answer = 0;
-        int c = Math.Min(a, b);
-        int d = Math.Max(a, b);
         
-        for (int i = c; i <= d; i++)
+        for (int i = Math.Min(a, b); i <= Math.Max(a, b); i++)
         {
             answer += i;
         }
