@@ -1,15 +1,15 @@
 public class Solution {
-    public int solution(int num) {
-        long ll = num;
+    public int solution(long num) {
+        
         for (int i = 0; i < 500; i++)
         {
-            if (ll == 1)
+            if (num == 1)
                 return i;
             
-            if (ll % 2 == 0)
-                ll /= 2;
+            if (num % 2 == 0)
+                num /= 2;
             else
-                ll = ll * 3 + 1;
+                num = num * 3 + 1;
         }
         
         return -1;
