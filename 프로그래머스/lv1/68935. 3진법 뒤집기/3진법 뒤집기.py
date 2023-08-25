@@ -1,6 +1,7 @@
 def solution(n):
-    num = ""
+    answer = 0
     while n:
-        num += str(n % 3)
+        answer *= 3
+        answer += n % 3
         n //= 3
-    return int(num, 3)
+    return answer
