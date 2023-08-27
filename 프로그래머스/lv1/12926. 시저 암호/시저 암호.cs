@@ -10,19 +10,17 @@ public class Solution
         foreach (char l in s)
         {
             string now = l.ToString();
-            string g;
 
             if (big.Contains(now))
-                g = big;
-            else if (small.Contains(now))
-                g = small;
-            else
             {
-                answer += " ";
-                continue;
+                answer += big[(big.IndexOf(now) + n) % 26];
             }
-            
-            answer += g[(g.IndexOf(now) + n) % 26];
+            else if (small.Contains(now))
+            {
+                answer += small[(small.IndexOf(now) + n) % 26];
+            }
+            else
+                answer += " ";
         }
 
         return answer;
