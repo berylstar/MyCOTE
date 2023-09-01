@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-
 public class Solution
 {
     public class Heapq
@@ -9,22 +8,23 @@ public class Solution
 
         public Heapq () { heapq = new List<int>(); }
 
-        public int[] Min()
+        public int Min
         {
-            int min = 2001;
-            int idx = -1;
-            for (int i = 0; i < heapq.Count; i++)
+            get
             {
-                if (heapq[i] < min)
+                int min = int.MaxValue;
+                for (int i = 0; i < heapq.Count; i++)
                 {
-                    idx = i;
-                    min = heapq[i];
+                    if (heapq[i] < min)
+                    {
+                        min = heapq[i];
+                    }
                 }
+                return min;
             }
-            return new int[] { idx, min };
         }
 
-        public void Pop() => heapq.RemoveAt(Min()[0]);
+        public void Pop() => heapq.Remove(Min);
 
         public void Push(int num) => heapq.Add(num);
     }
@@ -39,7 +39,7 @@ public class Solution
             heapq.Push(s);
             if (heapq.Count > k)
                 heapq.Pop();
-            answer.Add(heapq.Min()[1]);
+            answer.Add(heapq.Min);
         }
 
         return answer.ToArray();
