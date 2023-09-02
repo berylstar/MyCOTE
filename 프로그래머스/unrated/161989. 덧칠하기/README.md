@@ -1,10 +1,10 @@
 # [unrated] 덧칠하기 - 161989 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/161989) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/161989?language=csharp) 
 
 ### 성능 요약
 
-메모리: 11.9 MB, 시간: 1.13 ms
+메모리: 32.1 MB, 시간: 0.25 ms
 
 ### 구분
 
