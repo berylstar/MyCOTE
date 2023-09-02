@@ -7,7 +7,7 @@ public class Solution {
         {
             for (int j = i; j < number; j += i)
             {
-                dp[j]++;
+                dp[j] += 1;
             }
         }
         
