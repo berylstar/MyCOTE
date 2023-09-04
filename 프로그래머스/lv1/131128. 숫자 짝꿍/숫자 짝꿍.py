@@ -1,5 +1,6 @@
-def solution(X, Y):    
-    answer = ''.join([i * min(X.count(i), Y.count(i)) for i in sorted(set(X) & set(Y), reverse=True)])
+from collections import Counter
+def solution(X, Y):
+    answer = ''.join([i * min(Counter(X)[i], Counter(Y)[i]) for i in sorted(set(X) & set(Y), reverse=True)])
     
     if not answer:
         return '-1'
