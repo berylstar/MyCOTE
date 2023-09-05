@@ -1,16 +1,17 @@
 def solution(s):
     answer = 0
-    temp = [0, '']   # 갯수, 문자열
+    count = 0
+    now = ''
     
-    for i, c in enumerate(s):
-        temp[1] += c
+    for c in s:
+        now += c
 
-        if c == temp[1][0]:
-            temp[0] += 1
+        if c == now[0]:
+            count += 1
 
-        elif temp[0] != 0 and len(temp[1]) >= temp[0] * 2:
-            temp[1] = ''
-            temp[0] = 0
+        elif count != 0 and len(now) >= count * 2:
+            now = ''
+            count = 0
             answer += 1
             
-    return answer + int(temp[1] != '')
+    return answer + int(now != '')
