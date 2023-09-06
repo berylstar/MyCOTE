@@ -1,14 +1,11 @@
 def solution(ingredient):
-    q = []
+    s = ""
     answer = 0
     for i in ingredient:
-        q.append(i)
+        s += str(i)
         
-        if len(q) >= 4 and q[-4:] == [1, 2, 3, 1]:
+        if len(s) >= 4 and s[-4:] == "1231":
             answer += 1
-            q.pop()
-            q.pop()
-            q.pop()
-            q.pop()
+            s = s[:-4]
             
     return answer
