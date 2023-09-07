@@ -6,11 +6,11 @@ def solution(id_list, report, k):
         
         banned[b].append(id_list.index(a))
         
-    ans = [0 for _ in range(len(id_list))]
+    answer = [0 for _ in range(len(id_list))]
         
     for ban in banned.keys():
         if len(banned[ban]) >= k:
             for i in banned[ban]:
-                ans[i] += 1
+                answer[i] += 1
     
-    return ans
+    return answer
