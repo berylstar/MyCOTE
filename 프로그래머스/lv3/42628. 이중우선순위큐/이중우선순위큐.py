@@ -12,4 +12,4 @@ def solution(operations):
             else:
                 heapq.heappop(q)
             
-    return [max(q), heapq.heappop(q)] if len(q) > 0 else [0, 0]
+    return [max(q), heapq.heappop(q)] if q else [0, 0]
