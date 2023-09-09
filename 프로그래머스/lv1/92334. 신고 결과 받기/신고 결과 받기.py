@@ -4,7 +4,7 @@ def solution(id_list, report, k):
     
     for repo in set(report):
         a, b = repo.split()
-        ban[b] = ban.get(b, []) + [idxs[a]]
+        ban[b].append(idxs[a])
         
     answer = [0 for _ in range(len(id_list))]
         
