@@ -13,8 +13,8 @@ def solution(k, tangerine):
 #             answer -= 1
 
     answer = 0
-    for v in sorted(Counter(tangerine).values(), reverse=True):
-        k -= v
+    for i in sorted(Counter(tangerine).values(), reverse=True):
+        k -= i
         answer += 1
         if k <= 0:
             break
