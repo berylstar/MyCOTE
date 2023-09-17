@@ -9,22 +9,21 @@ for _ in range(int(input())):
     
     if i.startswith("push"):
         q.append(int(i[5:]))
-    elif i == "pop":
-        if not q:
-            print(-1)
-        else:
-            print(q.popleft())
+        
     elif i == "size":
         print(len(q))
+        
     elif i == "empty":
         print(int(len(q)==0))
+        
+    elif not q:
+        print(-1)
+        
+    elif i == "pop":
+        print(q.popleft())
+        
     elif i == "front":
-        if not q:
-            print(-1)
-        else:
-            print(q[0])
+        print(q[0])
+            
     elif i == "back":
-        if not q:
-            print(-1)
-        else:
-            print(q[-1])
+        print(q[-1])
