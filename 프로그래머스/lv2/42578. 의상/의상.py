@@ -1,9 +1,5 @@
+from collections import Counter
+from functools import reduce
 def solution(clothes):
-    d = {}
-    for a, b in clothes:
-        d[b] = d.get(b, 0) + 1
-        
-    answer = 1
-    for i in d.values():
-        answer *= (i + 1)
-    return answer - 1
+    c = Counter([i[1] for i in clothes])
+    return reduce(lambda acc,y : acc * (y+1), c.values(), 1) - 1
