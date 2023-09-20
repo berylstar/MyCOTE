@@ -7,11 +7,11 @@ def solution(k, dungeons):
         now = k
         temp = 0
         for i in case:
-            if now >= dungeons[i][0]:
-                now -= dungeons[i][1]
-                temp += 1
-            else:
+            if now < dungeons[i][0]:
                 break
+                
+            now -= dungeons[i][1]
+            temp += 1
                 
         answer = max(answer, temp)
         
