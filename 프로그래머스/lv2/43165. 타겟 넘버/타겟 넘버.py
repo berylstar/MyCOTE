@@ -2,7 +2,7 @@ from collections import deque
 def solution(numbers, target):
     N = len(numbers)
     q = deque()
-    q.append([0, []])    # i, temp
+    q.append([0, []])
     answer = 0
     
     while q:
