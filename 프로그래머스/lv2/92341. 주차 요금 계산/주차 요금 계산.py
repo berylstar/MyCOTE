@@ -38,6 +38,7 @@ def solution(fees, records):
 
     for num in sorted(parking.keys()):
         parking[num].Out(1439)
+        
         time = parking[num].total
         
         if time <= fees[0]:
