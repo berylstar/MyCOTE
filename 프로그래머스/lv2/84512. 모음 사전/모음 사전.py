@@ -6,8 +6,4 @@ def solution(word):
         for j in product('AEIOU', repeat=i):
             a.add(''.join(j))
             
-    d = {}
-    for i, v in enumerate(sorted(a)):
-        d[v] = i
-    
-    return d[word] + 1
+    return {v:i for i,v in enumerate(sorted(a))}[word] + 1
