@@ -1,7 +1,6 @@
 from collections import deque
 def solution(x, y, n):
-    q = deque()
-    q.append([x, 0])
+    q = deque([[x, 0]])
     
     allset = set()
     
@@ -10,12 +9,10 @@ def solution(x, y, n):
         
         if num in allset or num > y:
             continue
-        
-        allset.add(num)
-        
-        if num == y:
+        elif num == y:
             return cnt
         
+        allset.add(num)        
         q.append([num + n, cnt + 1])
         q.append([num * 2, cnt + 1])
         q.append([num * 3, cnt + 1])
