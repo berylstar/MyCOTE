@@ -6,12 +6,11 @@ def solution(n):
     num = 1
     
     for i in range(n):
-        dx = direction[i%3][0]
-        dy = direction[i%3][1]
+        d = direction[i%3]
         
         for _ in range(n-i):
-            x += dx
-            y += dy
+            x += d[0]
+            y += d[1]
             
             answer[x][y] = num
             num += 1
