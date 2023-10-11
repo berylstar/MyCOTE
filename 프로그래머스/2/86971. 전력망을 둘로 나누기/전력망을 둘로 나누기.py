@@ -11,9 +11,7 @@ def solution(n, wires):
             graph[wires[j][1]].append(wires[j][0])
             
         visited = [False for _ in range(n+1)]
-        q = deque()
-
-        q.append(1)
+        q = deque([1])
         
         while q:
             now = q.popleft()
