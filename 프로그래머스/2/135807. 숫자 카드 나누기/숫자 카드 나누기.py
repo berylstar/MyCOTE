@@ -5,28 +5,12 @@ def GCD(a, b):
     else:
         return GCD(b, a%b)
     
-def Divisor(num):
-    return [i for i in range(1, num+1) if num % i == 0]
+def CanDivide(num, array):
+    for i in array:
+        if i % num == 0:
+            return 0
+    return num
 
 from functools import reduce
-def solution(arrayA, arrayB):
-    left = Divisor(reduce(GCD, arrayA))
-    right = Divisor(reduce(GCD, arrayB))
-    
-    answer = [0]
-    
-    for num in left:
-        for b in arrayB:
-            if b % num == 0:
-                break
-        else:
-            answer.append(num)
-            
-    for num in right:
-        for a in arrayA:
-            if a % num == 0:
-                break
-        else:
-            answer.append(num)
-            
-    return max(answer)
+def solution(arrayA, arrayB):            
+    return max(CanDivide(reduce(GCD, arrayA), arrayB), CanDivide(reduce(GCD, arrayB), arrayA))
