@@ -22,3 +22,9 @@
 > =>
 > # arr2 = [1, 2, 3, 4, 5, 6]
 > ```
+
+> 배열의 누적 집계 : reduce
+> ```
+> from functools import reduce
+> gcd = reduce(GCD, numbers)
+> ```
