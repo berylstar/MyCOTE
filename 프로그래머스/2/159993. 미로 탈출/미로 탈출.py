@@ -3,8 +3,8 @@ def bfs(start, end, maps):
     dx = [0, 0, -1, 1]
     dy = [-1, 1, 0, 0]
     
-    N = len(maps)
-    M = len(maps[0])
+    N, M = len(maps), len(maps[0])
+    
     visited = [[False for _ in range(M)] for _ in range(N)]
     q = deque()
     flag = False
@@ -40,7 +40,6 @@ def bfs(start, end, maps):
                 visited[nx][ny] = True
                     
     return -1
-        
             
 def solution(maps):
     path1 = bfs('S', 'L', maps)
