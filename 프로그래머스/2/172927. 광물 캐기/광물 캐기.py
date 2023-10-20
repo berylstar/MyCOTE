@@ -5,7 +5,7 @@ def solution(picks, minerals):
     q = deque()
     q.append((picks, minerals, 0))
 
-    answer = []
+    answer = set()
     
     while q:
         np, nm, nc = q.popleft()
@@ -15,14 +15,14 @@ def solution(picks, minerals):
             cc = nc
             
             if sum(cp) == 0:
-                answer.append(cc)
+                answer.add(cc)
                 continue
 
             if cp[i] < 1:
                 continue
 
             if len(cm) == 0:
-                answer.append(cc)
+                answer.add(cc)
                 continue
             
             cc += sum(mineralDict[mineral][i] for mineral in cm[:5])
