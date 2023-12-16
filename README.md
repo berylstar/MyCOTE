@@ -28,3 +28,9 @@
 > from functools import reduce
 > gcd = reduce(GCD, numbers)
 > ```
+
+> 배열 깊은 복사 : deepcopy
+> ```
+> import copy
+> newGraph = copy.deepcopy(graph)
+> ```
