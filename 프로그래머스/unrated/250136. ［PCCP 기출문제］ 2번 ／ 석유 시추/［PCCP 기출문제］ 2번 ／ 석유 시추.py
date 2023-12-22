@@ -37,18 +37,5 @@ def solution(land):
                     
             oil[index] = count
             index += 1
-            
-    answer = []
-    
-    for i in range(M):
-        count = set()
-        for j in range(N):
-            count.add(land[j][i])
-            
-        now = 0
-        for c in count:
-            now += oil[c]
-        answer.append(now)
         
-    return max(answer)
-        
+    return max(sum(oil[c] for c in set(land[j][i] for j in range(N))) for i in range(M))
