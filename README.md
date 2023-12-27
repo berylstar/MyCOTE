@@ -34,3 +34,8 @@
 > import copy
 > newGraph = copy.deepcopy(graph)
 > ```
+
+> 소수점 표현하기
+> ```
+> print(f"{number:.2f}")
+> ```
