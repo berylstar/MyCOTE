@@ -1,5 +1,8 @@
+import sys
+input = sys.stdin.readline
+
 A = int(input())
-B = input()
+B = input().rstrip()
 C = int(input())
 
 if B == "+":
