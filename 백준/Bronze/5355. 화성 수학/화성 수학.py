@@ -12,4 +12,4 @@ for _ in range(int(input())):
         elif mars[i] == "@":
             answer *= 3
                 
-    print("%0.2f" % answer)
+    print(f"{answer:.2f}")
