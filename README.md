@@ -42,9 +42,11 @@
 
 배열의 원소 한줄로
 > ```
-> print(*numbers, sep="a")
+> print(*numbers, sep=" ")
 > ```
-> sep에 들어가는 걸로 사이 표현, 없으면 " "
+> ```
+> print(" ".join(numbers))
+> ```
 
 딕셔너리 value의 최댓값을 가진 key 찾기
 > ```
