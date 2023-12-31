@@ -1,12 +1,6 @@
 def DFS(texts):
     if len(texts) <= 1:
         return True
-    
-    nodes = bin(len(texts) + 1)[2:]
-    
-    if '1' in nodes[1:]:
-        dummies = (1 << len(nodes)) - int(nodes, 2)
-        texts = '0' * dummies + texts
         
     N = len(texts) // 2
     
@@ -20,15 +14,16 @@ def DFS(texts):
     right = DFS(texts[N+1:])
     
     return left and right
-    
 
 def solution(numbers):
     answer = []
     for number in numbers:
         texts = bin(number)[2:]
+
+        nodes = len(texts) + 1
+        need = bin(nodes)[3:]
+        if '1' in need:
+            texts = '0' * ((1 << len(need) + 1) - nodes) + texts
         
-        if DFS(texts) and texts != '0':
-            answer.append(1)
-        else:
-            answer.append(0)
+        answer.append(1 if DFS(texts) and texts != '0' else 0)
     return answer
