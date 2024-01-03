@@ -5,8 +5,7 @@ def GCD(A, B):
         return GCD(B, A % B)
         
 def LCM(A, B):
-    gcd = GCD(A, B)
-    return gcd * (A // gcd) * (B // gcd)
+    return A * B // GCD(A, B)
 
 A, B = map(int, input().split())
 A, B = max(A, B), min(A, B)
