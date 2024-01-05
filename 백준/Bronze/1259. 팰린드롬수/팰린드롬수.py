@@ -1,5 +1,8 @@
+import sys
+input = sys.stdin.readline
+
 while True:
-    number = input()
+    number = input().rstrip()
     
     if number == '0':
         break
