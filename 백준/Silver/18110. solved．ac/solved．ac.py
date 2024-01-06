@@ -7,11 +7,11 @@ def ROUND(val):
 T = int(input())
 
 difs = [int(input()) for _ in range(T)]
-cut = ROUND(T * 0.15)
 
 if T == 0:
     print(0)
 else:
+    cut = ROUND(T * 0.15)
     if cut > 0:
-        difs = sorted(difs)[cut:T - cut]
+        difs = sorted(difs)[cut:-cut]
     print(ROUND(sum(difs) / len(difs)))
