@@ -21,10 +21,10 @@ def CalcDistance(start):
     while q:
         currNode, currCost = q.popleft()
         
-        if currCost < cost[currNode]:
-            cost[currNode] = currCost
-        else:
+        if currCost >= cost[currNode]:
             continue
+            
+        cost[currNode] = currCost
         
         for nextNode in graph[currNode]:
             q.append((nextNode, currCost + 1))
