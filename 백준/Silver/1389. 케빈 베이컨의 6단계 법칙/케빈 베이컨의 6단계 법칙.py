@@ -17,7 +17,6 @@ def CalcDistance(start):
     q.append((start, 0))
     
     cost = [N+1 for _ in range(N+1)]
-    cost[0] = 0
     
     while q:
         currNode, currCost = q.popleft()
