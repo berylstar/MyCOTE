@@ -1,7 +1,6 @@
 import sys
 input = sys.stdin.readline
 from collections import deque
-import math
 
 N, M = map(int, input().split())
 
@@ -17,7 +16,7 @@ def CalcDistance(start):
     q = deque()
     q.append((start, 0))
     
-    cost = [math.inf for _ in range(N+1)]
+    cost = [N+1 for _ in range(N+1)]
     cost[0] = 0
     
     while q:
@@ -33,7 +32,7 @@ def CalcDistance(start):
 
     return sum(cost)
 
-minCost = math.inf
+minCost = N*N
 answer = 0
 
 for i in range(1, N+1):
