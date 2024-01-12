@@ -6,7 +6,5 @@ while True:
     
     if strr == '#':
         break
-        
-    strr = strr.upper()
     
-    print(sum(strr.count(i) for i in 'AEIOU'))
+    print(sum(strr.upper().count(i) for i in 'AEIOU'))
