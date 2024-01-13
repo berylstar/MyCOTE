@@ -41,15 +41,10 @@ for _ in range(int(input())):
             heapq.heappush(max_q, -num)
 
             numbers[num] = numbers.get(num, 0) + 1
-
-    answer = []
-
-    for num in numbers.keys():
-        if numbers[num] > 0:
-            answer.append(num)
+            
+    answer = sorted(num for num in numbers.keys() if numbers[num] > 0)
     
     if not answer:
         print("EMPTY")
     else:
-        answer.sort()
         print(answer[-1], answer[0])
