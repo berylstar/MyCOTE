@@ -9,10 +9,7 @@ for _ in range(int(input())):
 
         clothes[B] = clothes.get(B, []) + [A]
 
-    if len(clothes.keys()) == 1:
-        print(len(clothes[B]))
-    else:
-        answer = 1
-        for cloth in clothes.keys():
-            answer *= len(clothes[cloth]) + 1
-        print(answer - 1)
+    answer = 1
+    for cloth in clothes.keys():
+        answer *= len(clothes[cloth]) + 1
+    print(answer - 1)
