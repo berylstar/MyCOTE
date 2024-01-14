@@ -26,10 +26,7 @@ def BFS(i ,j):
             if nx < 0 or nx >= N or ny < 0 or ny >= N:
                 continue
                 
-            if visited[nx][ny]:
-                continue
-                
-            if picture[nx][ny] == mark:
+            if not visited[nx][ny] and picture[nx][ny] == mark:
                 visited[nx][ny] = True
                 q.append((nx, ny))
 
@@ -38,12 +35,9 @@ visited = [[False for _ in range(N)] for _ in range(N)]
 answer_all = 0
 for i in range(N):
     for j in range(N):
-        if visited[i][j]:
-            continue
-        
-        BFS(i, j)
-        
-        answer_all += 1
+        if not visited[i][j]:        
+            BFS(i, j)
+            answer_all += 1
 
 # 2. R=G
 visited = [[False for _ in range(N)] for _ in range(N)]
@@ -54,11 +48,8 @@ for i in range(N):
 
 for i in range(N):
     for j in range(N):
-        if visited[i][j]:
-            continue
-        
-        BFS(i, j)
-
-        answer_rg += 1
+        if not visited[i][j]:
+            BFS(i, j)
+            answer_rg += 1
 
 print(answer_all, answer_rg)
