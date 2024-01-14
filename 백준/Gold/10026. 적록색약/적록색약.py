@@ -8,8 +8,9 @@ d = {0:[1,0], 1:[-1,0], 2:[0,1], 3:[0,-1]}
 N = int(input())
 picture = [input().rstrip() for _ in range(N)]
 
+q = deque()
+
 def BFS(i ,j):
-    q = deque()
     q.append((i, j))
 
     visited[i][j] = True
@@ -57,7 +58,7 @@ for i in range(N):
             continue
         
         BFS(i, j)
-        
+
         answer_rg += 1
 
 print(answer_all, answer_rg)
