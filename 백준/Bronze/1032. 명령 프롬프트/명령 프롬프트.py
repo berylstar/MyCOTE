@@ -5,11 +5,9 @@ N = int(input())
 answer = list(input().rstrip())
 leng = len(answer)
 
-for _ in range(N - 1):
-    word = input().rstrip()
-    
-    for i in range(leng):
-        if answer[i] != word[i] and answer[i] != '?':
+for _ in range(N - 1):    
+    for i, w in enumerate(input().rstrip()):
+        if answer[i] != w and answer[i] != '?':
             answer[i] = '?'
             
 print(''.join(answer))
