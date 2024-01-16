@@ -3,7 +3,6 @@ input = stdin.readline
 
 N = int(input())
 answer = list(input().rstrip())
-leng = len(answer)
 
 for _ in range(N - 1):    
     for i, w in enumerate(input().rstrip()):
