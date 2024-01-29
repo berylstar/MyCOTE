@@ -1,6 +1,4 @@
-n = int(input())
-
-for i in range(n,3,-1):
-    if all([(s == '4' or s == '7') for s in str(i)]):
+for i in reversed(range(int(input()) + 1)):
+    if all((s in '47') for s in str(i)):
         print(i)
         break
