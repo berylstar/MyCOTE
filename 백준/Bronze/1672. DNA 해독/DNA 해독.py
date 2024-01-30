@@ -10,8 +10,7 @@ d = {"AA" : "A", "AG" : "C", "AC" : "A", "AT" : "G", "GA" : "C","GG" : "G",
 
 a = dna.pop()
 
-for _ in range(N-1):
-    b = dna.pop()
-    a = d[b+a]
+while dna:
+    a = d[dna.pop()+a]
     
 print(a)
