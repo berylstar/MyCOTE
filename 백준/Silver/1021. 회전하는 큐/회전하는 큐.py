@@ -10,7 +10,6 @@ q = deque([i for i in range(1, N+1)])
 answer = 0
 for num in numbers:
     while True:
-        
         if q[0] == num:
             q.popleft()
             break
@@ -23,5 +22,4 @@ for num in numbers:
                 while q[0] != num:
                     q.appendleft(q.pop())
                     answer += 1
-
 print(answer)
