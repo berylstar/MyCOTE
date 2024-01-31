@@ -1,12 +1,10 @@
 from sys import stdin
 input = stdin.readline
 
-T = int(input())
-
 def CheckInPath(x, y, a, b, r):
     return (a - x) ** 2 + (b - y) ** 2 <= r ** 2
 
-for _ in range(T):
+for _ in range(int(input())):
 
     x1, y1, x2, y2 = map(int, input().split())
     ret = 0
