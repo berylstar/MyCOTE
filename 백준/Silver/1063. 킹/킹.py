@@ -1,15 +1,13 @@
 from sys import stdin
 input = stdin.readline
 
-pos = {'A':1, 'B':2, 'C':3, 'D':4, 'E':5, 'F':6, 'G':7, 'H':8}
-posi = 'AABCDEFGH'
 dir = {'R':[1,0], 'L':[-1,0], 'B':[0,-1], 'T':[0,1],
        'RT':[1,1], 'LT':[-1,1], 'RB':[1,-1], 'LB':[-1,-1]}
 
 king, stone, N = map(str, input().split())
 
-kx, ky = pos[king[0]], int(king[1])
-sx, sy = pos[stone[0]], int(stone[1])
+kx, ky = ord(king[0]) - 64, int(king[1])
+sx, sy = ord(stone[0]) - 64, int(stone[1])
 
 for _ in range(int(N)):
     d = dir[input().rstrip()]
@@ -29,5 +27,5 @@ for _ in range(int(N)):
 
     kx, ky = nkx, nky
 
-print(posi[kx], ky, sep='')
-print(posi[sx], sy, sep='')
+print(chr(kx + 64), ky, sep='')
+print(chr(sx + 64), sy, sep='')
