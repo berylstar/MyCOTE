@@ -12,5 +12,4 @@ for i in range(4, 100001):
     dp.append(now)
 
 for _ in range(int(input())):
-    n = int(input())
-    print(sum(dp[n]) % 1000000009)
+    print(sum(dp[int(input())]) % 1000000009)
