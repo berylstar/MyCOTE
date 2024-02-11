@@ -2,7 +2,7 @@ from sys import stdin
 input = stdin.readline
 
 N = int(input())
-rooms = sorted([list(map(int, input().split())) for _ in range(N)], key=lambda x:(x[1], x[0]))
+rooms = sorted([tuple(map(int, input().split())) for _ in range(N)], key=lambda x:(x[1], x[0]))
 
 answer = 0
 curr = -1
