@@ -46,7 +46,7 @@ namespace MyCompiler {
                 L = int.Parse(Console.ReadLine());
                 string[] start = Console.ReadLine().Split();
                 string[] target = Console.ReadLine().Split();
-                graph = new int[311, 311];
+                graph = new int[301, 301];
 
                 targetX = int.Parse(target[0]);
                 targetY = int.Parse(target[1]);
