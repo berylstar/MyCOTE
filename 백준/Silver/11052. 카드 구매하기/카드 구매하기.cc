@@ -1,24 +1,32 @@
 #include <iostream>
-#include <algorithm>
-
 using namespace std;
 
-const int MAX = 1001;
-int dp[MAX];
-int cards[MAX];
+int main() {
+    int N;
+    cin >> N;
 
-int main(){
-    int n;
-    cin >> n;
+    int cards[N];
+    int dp[N+1];
     
-    for(int i=1;i<=n;i++)
+    for (int i = 0; i < N; i++)
+    {
         cin >> cards[i];
-    
-    for(int i=1;i<=n;i++)
-        for(int j=1;j<=i;j++)
-            dp[i] = max(dp[i], dp[i-j] + cards[j]);
-    
-    cout << dp[n] << endl;
-    
+        dp[i] = 0;
+    }
+    dp[N] = 0;
+
+    for (int i = 1; i <= N; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            if (dp[i] <= cards[j-1] + dp[i-j])
+            {
+                dp[i] = cards[j-1] + dp[i-j];
+            }
+        }
+    }
+
+    cout << dp[N];
+
     return 0;
 }
