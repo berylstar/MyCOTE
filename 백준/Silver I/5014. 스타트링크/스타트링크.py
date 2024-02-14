@@ -6,10 +6,10 @@ from collections import deque
 F, S, G, U, D = map(int, input().split()) # 최대, 현재, 목표, 위, 아래
 
 q = deque()
-sett = set()
-
 q.append((S, 0))
-sett.add(S)
+
+visited = [False for _ in range(F+1)]
+visited[S] = True
 
 while q:
     curr, count = q.popleft()
@@ -18,10 +18,10 @@ while q:
         print(count)
         exit(0)
     
-    if curr - D > 0 and curr - D not in sett:
+    if curr - D > 0 and not visited[curr - D]:
         q.append((curr - D, count + 1))
-        sett.add(curr - D)
-    if curr + U <= F and curr + U not in sett:
+        visited[curr - D] = True
+    if curr + U <= F and not visited[curr + U]:
         q.append((curr + U, count + 1))
-        sett.add(curr + U)
+        visited[curr + U] = True
 print("use the stairs")
