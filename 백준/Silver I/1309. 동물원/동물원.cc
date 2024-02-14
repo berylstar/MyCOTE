@@ -6,7 +6,7 @@ int main()
     int N;
     cin >> N;
     
-    int dp[100001] = { 1, };
+    int dp[N+3] = { 1, };
     dp[1] = 3;
     dp[2] = 7;
 
