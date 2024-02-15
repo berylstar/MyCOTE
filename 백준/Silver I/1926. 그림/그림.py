@@ -13,12 +13,12 @@ q = deque()
 
 for i in range(N):
     for j in range(M):
-        if graph[i][j] != 1:
+        if graph[i][j] == 0:
             continue
             
         curr = 1
         q.append((i, j))
-        graph[i][j] = 2
+        graph[i][j] = 0
         
         while q:
             x, y = q.popleft()
@@ -31,7 +31,7 @@ for i in range(N):
                     continue
                 
                 if graph[nx][ny] == 1:
-                    graph[nx][ny] = 2
+                    graph[nx][ny] = 0
                     q.append((nx, ny))
                     curr += 1
                     
