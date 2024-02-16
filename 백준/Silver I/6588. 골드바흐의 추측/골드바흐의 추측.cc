@@ -2,19 +2,18 @@
  
 using namespace std;
  
+const int MAX = 1000000;
  
-#define MAX 1000000
- 
-int primeArr[MAX] = {0};
+bool primeArr[MAX] = {false, };
  
 void primeChk(){
     
     for(int i = 2; i*i<=MAX; i++){
         
-        if(primeArr[i]==0){
+        if(!primeArr[i]){
         
             for(int j = i*i; j<=MAX; j+=i){
-                primeArr[j] = 1;
+                primeArr[j] = true;
             }
         }
         
@@ -40,8 +39,7 @@ int main(){
         bool chk = false;
         
         for(int a = 3; a<= n; a+=2){
-           // int b = n - a;
-            if(primeArr[a]==0 && primeArr[n-a]==0) {    //a가
+            if(!primeArr[a] && !primeArr[n-a]) {
                 cout << n << " = " << a << " + " << n-a << "\n";
                 chk = true;
                 break;
