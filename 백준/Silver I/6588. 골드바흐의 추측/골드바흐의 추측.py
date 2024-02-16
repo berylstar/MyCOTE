@@ -1,15 +1,14 @@
-import sys
-input = sys.stdin.readline
+from sys import stdin
+input = stdin.readline
 
-a = [i for i in range(1000001)]
-a[1] = 0
+sosu = [True for i in range(1000001)]
 
-for i in range(2, int(len(a) ** 0.5) + 1):
-    if a[i] == 0:
+for i in range(2, int(1000001 ** 0.5) + 1):
+    if not sosu[i]:
         continue
 
-    for j in range(i + i, len(a), i):
-        a[j] = 0
+    for j in range(i + i, 1000001, i):
+        sosu[j] = False
 
 while True:
     buff = int(input())
@@ -18,7 +17,7 @@ while True:
         break
 
     for i in range(3, buff // 2 + 1, 2):
-        if a[i] and a[buff - i]:
+        if sosu[i] and sosu[buff - i]:
             print(f"{buff} = {i} + {buff - i}")
             break
     else:
